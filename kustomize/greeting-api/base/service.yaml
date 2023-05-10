@@ -7,4 +7,4 @@ spec:
     app: greeting-api
   ports:
     - port: 3001
-      targetPort: greeting-api-svc
+      targetPort: http

@@ -18,5 +18,5 @@ spec:
           image: greeting-api
           imagePullPolicy: Always
           ports:
-            - name: greeting-api-svc
+            - name: http
               containerPort: 3001
