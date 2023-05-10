@@ -28,3 +28,9 @@ helm install -n kube-system csi-secrets-store secrets-store-csi-driver/secrets-s
 helm repo add argo https://argoproj.github.io/argo-helm
 helm install -n argocd argocd argo/argo-cd
 ```
+
+## Add Application to ArgoCD
+
+```
+kubectl apply -k kustomize/argo
+```
