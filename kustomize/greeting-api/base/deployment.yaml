@@ -1,0 +1,22 @@
+greeting-apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeting-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greeting-api
+  template:
+    metadata:
+      labels:
+        app: greeting-api
+    spec:
+      containers:
+        - name: greeting-api
+          # just a placeholder for kustomize
+          image: greeting-api
+          imagePullPolicy: Always
+          ports:
+            - name: greeting-api-svc
+              containerPort: 3001

@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base.yaml
+
+commonLabels:
+  app: greeting-api-main
+
+nameSuffix: -main
+
+images:
+  - name: greeting-api
+    newName: ghcr.io/saenyakorn/simple-services/greeting-api
+    newTag: 1.0.0

@@ -1,0 +1,22 @@
+gateway-apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway-api
+  template:
+    metadata:
+      labels:
+        app: gateway-api
+    spec:
+      containers:
+        - name: gateway-api
+          # just a placeholder for kustomize
+          image: gateway-api
+          imagePullPolicy: Always
+          ports:
+            - name: gateway-api-svc
+              containerPort: 3000

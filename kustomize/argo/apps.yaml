@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: simple-services-apps
+spec:
+  destination:
+    namespace: simple-services
+    server: https://kubernetes.default.svc
+  project: simple-services
+  source:
+    helm:
+      valueFiles:
+        - values.yaml
+    path: kustomize/apps
+    repoURL: git@github.com:saenyakorn/aws-eks-secret-handling.git
+    targetRevision: HEAD
+  syncPolicy: {}

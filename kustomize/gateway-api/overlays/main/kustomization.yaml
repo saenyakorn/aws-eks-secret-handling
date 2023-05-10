@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base.yaml
+
+commonLabels:
+  app: gateway-api-main
+
+nameSuffix: -main
+
+images:
+  - name: gateway-api
+    newName: ghcr.io/saenyakorn/simple-services/gateway-api
+    newTag: 1.0.0

@@ -1,0 +1,8 @@
+spec:
+  destination:
+    namespace: simple-services
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: git@github.com:saenyakorn/aws-eks-secret-handling.git
+    targetRevision: HEAD
+  project: simple-services
