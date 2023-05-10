@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: greeting-api
+  name: greeting-api-svc
 spec:
   selector:
-    app: greeting-api
+    app: greeting-api-svc
   ports:
     - port: 3001
       targetPort: http
