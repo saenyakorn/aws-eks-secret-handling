@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeting-api
+spec:
+  template:
+    spec:
+      containers:
+        - name: greeting-api
+          # just a placeholder for kustomize
+          image: greeting-api
+          volumeMounts:
+            - name: greeting-api-secrets
+              mountPath: /app
+              readOnly: true
+      volumes:
+        - name: greeting-api-secrets
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: greeting-api-secrets

@@ -3,11 +3,18 @@ kind: Kustomization
 
 resources:
   - ../../base
+  - secret.yaml
 
 commonLabels:
   app: gateway-api-main
 
 nameSuffix: -main
+
+patches:
+  - path: deployment.yaml
+    target:
+      kind: Deployment
+      name: gateway-api
 
 images:
   - name: gateway-api

@@ -3,11 +3,15 @@ kind: Kustomization
 
 resources:
   - ../../base
+  - secret.yaml
 
 commonLabels:
   app: greeting-api-main
 
 nameSuffix: -main
+
+patches:
+  - path: deployment.yaml
 
 images:
   - name: greeting-api

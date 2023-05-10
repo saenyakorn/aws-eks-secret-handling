@@ -1,8 +1,9 @@
 import * as awsx from '@pulumi/awsx'
+import * as aws from '@pulumi/aws'
 import * as eks from '@pulumi/eks'
 
 // Create a VPC for our cluster.
-const vpc = new awsx.ec2.Vpc('vpc', { numberOfAvailabilityZones: 1 })
+const vpc = new awsx.ec2.Vpc('vpc', { numberOfAvailabilityZones: 2 })
 
 // Create the EKS cluster itself and a deployment of the Kubernetes dashboard.
 const cluster = new eks.Cluster('cluster', {
@@ -16,4 +17,3 @@ const cluster = new eks.Cluster('cluster', {
 
 // Export the cluster's kubeconfig.
 export const kubeconfig = cluster.kubeconfig
-
