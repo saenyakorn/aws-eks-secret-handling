@@ -3,4 +3,14 @@ kind: Namespace
 metadata:
   name: simple-services
   annotations:
-    argocd.argoproj.io/sync-wave: '-1'
+    argocd.argoproj.io/sync-wave: "-1"
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: secret-manager-sa
+  namespace: simple-services
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::412307111695:role/secret-manager-sa-9d18438
+---
+
