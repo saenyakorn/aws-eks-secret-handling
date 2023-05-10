@@ -10,8 +10,8 @@ commonLabels:
 
 nameSuffix: -main
 
-# patches:
-#   - path: deployment.yaml
+patches:
+  - path: deployment.yaml
 
 images:
   - name: greeting-api
