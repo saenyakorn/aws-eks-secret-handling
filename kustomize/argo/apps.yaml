@@ -9,6 +9,7 @@ spec:
   project: simple-services
   source:
     helm:
+      version: v3
       valueFiles:
         - values.yaml
     path: kustomize/apps
