@@ -10,13 +10,13 @@ spec:
           # just a placeholder for kustomize
           image: gateway-api
           volumeMounts:
-            - name: gateway-api-secrets
+            - name: gateway-api-secrets-main
               mountPath: /app
               readOnly: true
       volumes:
-        - name: gateway-api-secrets
+        - name: gateway-api-secrets-main
           csi:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: gateway-api-secrets
+              secretProviderClass: gateway-api-secrets-main

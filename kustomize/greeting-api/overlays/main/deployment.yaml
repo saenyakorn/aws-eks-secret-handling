@@ -10,13 +10,13 @@ spec:
           # just a placeholder for kustomize
           image: greeting-api
           volumeMounts:
-            - name: greeting-api-secrets
+            - name: greeting-api-secrets-main
               mountPath: /app
               readOnly: true
       volumes:
-        - name: greeting-api-secrets
+        - name: greeting-api-secrets-main
           csi:
             driver: secrets-store.csi.k8s.io
             readOnly: true
             volumeAttributes:
-              secretProviderClass: greeting-api-secrets
+              secretProviderClass: greeting-api-secrets-main
