@@ -1,26 +1,23 @@
-apiVersion: v1
-kind: ConfigMap
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
-  name: simple-services-repo-config
+  creationTimestamp: null
+  name: ssh-key
   namespace: argocd
   labels:
     app.kubernetes.io/name: simple-services-repo-config
     app.kubernetes.io/part-of: argocd
-data:
-  repositories: |
-    - url: https://github.com/saenyakorn/monorepo-versioning-gitops.git
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: monorepo-demo-repo-config
-  namespace: argocd
-  labels:
-    app.kubernetes.io/name: monorepo-demo-repo-config
-    app.kubernetes.io/part-of: argocd
-    argocd.argoproj.io/secret-type: repository
-stringData:
-  name:
-  project: monorepo-demo
-  type: git
-  url: https://github.com/saenyakorn/monorepo-versioning-gitops.git
+spec:
+  encryptedData:
+    sshPrivateKey: AgAI47jkkHNEr7WZEKvI/kQ7UII/MjofGG9+Gcla23mQ9FJrgKuU4TthATPTKvb8q6987hbUjF1QdqgVIWFlF73BwjQnv+iBW9M7F+jnR/RF5LkuX/4wLoNevYKGjaDwbb/uiN1/TXHbIdCo8NMYAo4FntDzPUZgWHsYVcd7R8c1yBu4/M/rGC+XWLSqdWsIpyWmKbaI+/jY15vlvTHY7v3inUbnVqB2M4JWH7vvX2cGLXl46MPABBcsM8+wIE4HlxxmRZJhV9bpg8HzEi+H0TKjgorrFjyu8s1p7MWupqh4RIyNR0kDNLskCLhiFMcIUgl+mFzZx6AQh4lFJSy75E+iFjiGWW6jm/KToyaMIc/396BnWaWt6A9SdA+86zNh3KNetnwFI5KwEZHpskMK7Fu+ho0u/qsfJRf3QMym9hrmMkSuF5C//bj4SWcIbFKXg3fJhvvFs+FjBu50SdDyfrLxROHv5Nqu4S8xxY5nhOEBAcPPmjaeKe19BWLiyuAju7CZKCmVZ8zsruFSVGU6Ff00qh409nFqcCWnlgf/w2aHdIuaOUbP84HIsxmPBu15GZ9lEeeXsXEO3iO8LZrqqOYzIqhDXOFRuTaCdVxurOfFDGBaDxbTRPOu9Cl3wd6Me0QnpBNcrUqGccXMo7NE15bAEjPrTZ+rJ+yFfps9tBIZAGORM2P5DOwWsiUP/9wK27p8raxv2gxtss4DGyhVcqDHgJ/pslkxblkP4Gia8Y9zlzJNpNOjYVWc6a5wRdCLzQPDaO30OqqiEPNFXxarIvaDjGRl6756NWVF8sGCeHvvLKE2wjqhTkNlPS2laNGMwzVDst5qhEet8ZwvRpPsAz3YU0ckSv3HmWWp0M9brERw7fkBF8HBt7kuBJAn/vTk1n/ezu+i8NGOmoQm9/+4SlQ2PqsEsA7A+aiYqLrGqPP3EIXxbSjpxZxt0qj4tX9yJANO3QJU8Ln0BeK2C/HbMIis6Ict1s2iHoap6AgnY1gRbyD0vROkPreMQEEMBoPAJHinRBkNXrSNmMwKWvc5vcxURYtDRhFn2mX+vkLmbb3IJPTzIsR/sCdHuqkdOR4YXvDinvWNJXC190sMcoP6hxEnPjdx9dzm88rH06NtR/GuR+XsP1I2XnsX3dLyw/j8oghNuENdrB07GtTkT8Y1JeGFWYch0d8g/QEnhMoBU3do4K7LcKtTdWtpHu41HDgviWjoYkxEZbjpUZiHkBt+s3k=
+    type: AgBd8UHNP+ZB7FKqBwZiuNW3iI2frULQ7iljAw9S4YoPJNdAWt+vczDSc6ODjDoN6TOub/189gK+iPOd0e6jr0MZFKSG+Z7LzESwUrWh3tifiAeHQdGSAJzbkmH2SrWYq9aayjOQlIpOhPova71L6R5lN67kTc/KPj/pEny0cRoVUReBsbALX1bZxNfS5F+4pjvbJzFr0enhpQhjoEn7lAzbkiYfQZYUJyt5Sx1tOoVE3yMpZARMgd5fPVeI6KmBY/fDvSUc608DvNFtWFbCsd9U8fTpKnTHFpIRfMlJ6pKNLnNDxTvGPgL8A3da8oGvG/eP1mqxsAZyp0J9orQQVtxN1nEYqCSSOwFC+IK8KiA9v0/vOeoOII34RmQM3qoCK5Jg/uUhaoSXrn/opIOAcrauMKoUUmZsQX0yI9hJUqEC8fx/Cts6tj6Zy9ocLzeYeEdzJAtw8kFnesnESYA862jInMu0NZjBEgbU1ES8P5kdM9JsHrfkX9gCw+BpCbIHWznIN/foyfVl0aQ0Dcuc1MFSX5bOZmKWe1gzX00Te0vyLHZ27wupVDX+FHyigVDiTyZ4TcfjGXN048jBAJL9UlM0hBr/JSKnJgEwxUiunpuKBIvq277IoacGyNFQ8EPcalinXsKRd2RKsQQGWHtB+502kUXGP7HSaUeEXuOAY/NfNfKUnd2ptSg0Rtvx8YmUyZxqDdM=
+    url: AgA4TAqQ7OKZvFIsZ2aVDY1sHpkuPLedMivXx9SUcTLoGsdFlV280EYU/nK67KlujdTNmSTUanxeEJsyRDBqsKXhSuRg6S6YDLEnWTDLwBFVjbx6yHCQ9k7Df9j5vcvPtqZ48/Z/970PuN8VZT7wsI9LUJzraZis6QGDZ+j1SQz5d8JGF1Et3pOrEBjpl0mG73qyoXXkVvEHVoV4QcaLySVoGN2y9gYvAgvliV01T5l0S3VELIQmv4L+fCyQ0E/enDYf/NpO5CJB8sQNkKSGXUhyIx6A4jzzUqvZ1lbk+1ijfSoC3YO+fejBNKCsihdzO+B4L83YIDGzlnGQ9yz0yMPKd3y+cN1sVdx4CXnYWcAI+LmLo3bL43CLDXHfbG+tt474ckJRuUXUeEmO/g9SVt+8o5utcudIYRAkEjjoes2hYcXCy6g5kRcfVZA1OhF+rk3UlITc2Tf+LktBLSd2H37dlikjkzhUQfJxjYaoA2Ro9VWTBar8lYq5WZuq0UjHfGSM9XKe3lzWX8QX/+mZJMDKcd+df5j4a+PPdwVC2dh8moD4P3PPBRLkVbTgLpNhY1J8O3gVBrl0jnQdqKB7etgM9JqEI73dnRKCGj8vrl5EgNal2hGHHsBkOSUxy4XmKBp9ywdVwQI401/A78kYyET2WjUe12BE+Kw2l0AUh9Sze3YE5htjyfgR5A4jK5yC0O4nXc8OyRA42s5GvMyZ08kSxokVpOiohqPCsjDnypXQsVnNiNsEBcndvXZHKQaADz+a0eGzpA==
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        argocd.argoproj.io/secret-type: repository
+        app.kubernetes.io/name: simple-services-repo-config
+        app.kubernetes.io/part-of: argocd
+      name: ssh-key
+      namespace: argocd
