@@ -46,7 +46,7 @@ const saRole = new aws.iam.Role(saName, {
         Principal: {
           Service: 'eks.amazonaws.com',
         },
-        Action: ['sts:AssumeRole'],
+        Action: ['sts:AssumeRole', 'sts:AssumeRoleWithWebIdentity'],
       },
     ],
   },
