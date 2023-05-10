@@ -2,7 +2,7 @@ apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
   creationTimestamp: null
-  name: ssh-key
+  name: simple-services-repo-config
   namespace: argocd
   labels:
     app.kubernetes.io/name: simple-services-repo-config
@@ -19,5 +19,5 @@ spec:
         argocd.argoproj.io/secret-type: repository
         app.kubernetes.io/name: simple-services-repo-config
         app.kubernetes.io/part-of: argocd
-      name: ssh-key
+      name: simple-services-repo-config
       namespace: argocd
