@@ -2,6 +2,12 @@
 
 ## Prepare your K8s cluster
 
+## Setup all required k8s namespaces
+
+```
+kubectl apply -k kustomize/namespaces
+```
+
 ## Install Sealed Secrets
 
 ```
@@ -19,7 +25,6 @@ helm install -n kube-system csi-secrets-store secrets-store-csi-driver/secrets-s
 ## Install ArgoCD
 
 ```
-kubectl create namespace argocd
 helm repo add argo https://argoproj.github.io/argo-helm
 helm install -n argocd argocd argo/argo-cd
 ```
