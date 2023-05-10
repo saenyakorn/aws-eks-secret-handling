@@ -12,8 +12,9 @@ spec:
           image: greeting-api
           volumeMounts:
             - name: greeting-api-secrets-main
-              mountPath: /app
+              mountPath: /app/.env
               readOnly: true
+              subPath: .env
       volumes:
         - name: greeting-api-secrets-main
           csi:

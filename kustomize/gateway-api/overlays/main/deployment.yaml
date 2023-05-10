@@ -12,8 +12,9 @@ spec:
           image: gateway-api
           volumeMounts:
             - name: gateway-api-secrets-main
-              mountPath: /app
+              mountPath: /app/.env
               readOnly: true
+              subPath: .env
       volumes:
         - name: gateway-api-secrets-main
           csi:

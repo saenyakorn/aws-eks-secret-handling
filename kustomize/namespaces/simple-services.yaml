@@ -11,6 +11,4 @@ metadata:
   name: secret-manager-sa
   namespace: simple-services
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::412307111695:role/secret-manager-sa-9d18438
----
-
+    eks.amazonaws.com/role-arn: arn:aws:iam::412307111695:role/secret-manager-sa-cb39d9a
