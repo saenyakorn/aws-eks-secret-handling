@@ -7,4 +7,3 @@ resources:
   - apps.yaml
   - projects.yaml
   - repo-config.yaml
-  - ssh-key.yaml
