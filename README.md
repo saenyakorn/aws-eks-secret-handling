@@ -39,15 +39,5 @@ helm install -n argocd argocd argo/argo-cd
 ### Add applications to ArgoCD
 
 ```
-
-```
-
 kubectl apply -k kustomize/argo
-
-```
-
-```
-
-```
-
 ```
